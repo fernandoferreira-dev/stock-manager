@@ -1,0 +1,30 @@
+# Dependencies
+backend/vendor/
+frontend/node_modules/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Logs
+backend/logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# Docker
+*.pid
+
+# Composer
+backend/composer.phar

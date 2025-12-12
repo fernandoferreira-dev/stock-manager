@@ -1,0 +1,39 @@
+# Use PHP 8.2 com Apache
+FROM php:8.2-apache
+
+# Instalar dependências do sistema
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    libzip-dev \
+    python3 \
+    python3-pip \
+    python3-serial \
+    && docker-php-ext-install pdo pdo_mysql zip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Instalar Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Habilitar mod_rewrite do Apache
+RUN a2enmod rewrite
+
+# Diretório de trabalho
+WORKDIR /var/www/html
+
+# Copiar arquivos do projeto
+COPY . /var/www/html
+
+# Instalar dependências do Composer
+RUN composer install --no-dev --optimize-autoloader
+
+# Ajustar permissões
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html \
+    && usermod -a -G dialout www-data
+
+# Expor a porta padrão do Apache
+EXPOSE 80
+
+# Comando para iniciar o Apache
+CMD ["apache2-foreground"]

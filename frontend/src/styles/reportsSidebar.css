@@ -1,0 +1,124 @@
+.report-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 90;
+    animation: fadeIn 0.2s ease-in;
+}
+
+.report-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* changed from left: 0 */
+    width: 400px;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 100;
+    box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+    /* shadow on left for right-side panel */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    animation: slideInRight 0.25s ease-out;
+    /* updated animation */
+}
+
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.report-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #1d3557;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+}
+
+.report-info {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.report-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.report-form label {
+    font-weight: 500;
+    color: #1d3557;
+}
+
+.report-form input,
+.report-form select,
+.report-form textarea {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 0.9rem;
+    font-family: inherit;
+}
+
+.report-form input:focus,
+.report-form select:focus,
+.report-form textarea:focus {
+    border-color: #1d3557;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #1d3557;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #16324f;
+}
+
+/* Animations */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        /* start off-screen right */
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

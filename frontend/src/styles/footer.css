@@ -1,0 +1,21 @@
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #000000;
+  color: #d1d5db;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.app-footer p {
+  margin: 0;
+  line-height: 1;
+  font-size: 0.75rem;
+  white-space: nowrap;
+}

@@ -1,0 +1,279 @@
+/* Loading Screen */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+
+
+
+
+.loading-text {
+  margin-top: 16px;
+  color: #4b5563;
+}
+
+/* Access Denied */
+.access-denied {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.access-denied-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.access-denied-text {
+  color: black;
+}
+
+.access-denied-role {
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 16px;
+}
+
+/* Home Page */
+.home-page {
+  text-align: center;
+  padding: 20px;
+}
+
+.home-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.home-description {
+  font-size: 16px;
+  margin-top: 32px;
+  color: black;
+  line-height: 1.6;
+}
+
+.home-instruction {
+  font-size: 18px;
+  margin-top: 40px;
+  color: black;
+}
+
+.home-user-info {
+  font-size: 14px;
+  color: #4b5563;
+  margin-top: 28px;
+}
+
+.home-logo {
+  height: auto;
+  max-width: 200px;
+  margin: 28px auto 0;
+  display: block;
+}
+
+/* Generic Page Styles */
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: black;
+}
+
+.page-text {
+  color: black;
+}
+
+/* App Container - Desktop */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: 270px; /* Account for sidebar */
+  padding: 0 calc(4rem + 20px);
+  transition: margin-left 0.3s ease, padding 0.3s ease;
+}
+
+/* Quando sidebar está fechada */
+.app-container.sidebar-closed {
+  margin-left: 0;
+  padding: 0 15rem;
+}
+
+.main-content {
+  width: 100%;
+  max-width: 1400px; /* Cap at 1400px for very large screens */
+  padding: 40px;
+  margin: 160px auto 35px auto; /* Centered with auto margins */
+  padding-bottom: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Make inner content respect container and allow horizontal scroll when needed */
+.main-content,
+.main-content * {
+  box-sizing: border-box;
+}
+
+.main-content {
+  overflow-x: auto;
+}
+
+/* Images and media should never overflow their container */
+img,
+picture,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tables: allow horizontal scroll on small screens and keep layout flexible */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  max-width: 100%;
+}
+
+td, th {
+  word-break: break-word;
+}
+
+/* Footer */
+.footer-wrapper {
+  position: relative;
+  z-index: 50;
+  transition: margin-left 0.3s ease, opacity 0.3s ease;
+  margin-left: 270px;
+}
+
+.footer-wrapper.sidebar-closed {
+  margin-left: 0;
+}
+
+.footer-visible {
+  opacity: 1;
+}
+
+.footer-hidden {
+  opacity: 0;
+}
+
+/* Responsive Design */
+
+/* Large tablets and small desktops */
+@media (max-width: 1400px) {
+  .main-content {
+    max-width: 90%;
+    padding: 40px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .app-container {
+    margin-left: 200px; /* Narrower sidebar */
+  }
+
+  .footer-wrapper {
+    margin-left: 200px;
+  }
+
+  .main-content {
+    width: 85%;
+    max-width: 1200px;
+    padding: 35px;
+    margin-top: 140px;
+    margin-bottom: 40px;
+  }
+
+  .home-title {
+    font-size: 24px;
+  }
+}
+
+/* Mobile and small tablets */
+@media (max-width: 768px) {
+  .app-container {
+    margin-left: 0; /* Remove sidebar margin on mobile */
+  }
+
+  .footer-wrapper {
+    margin-left: 0;
+  }
+
+  .main-content {
+    width: calc(100% - 30px);
+    max-width: none;
+    padding: 25px;
+    margin: 100px 15px 40px 15px;
+    border-radius: 8px;
+  }
+
+  .home-title,
+  .page-title,
+  .access-denied-title {
+    font-size: 22px;
+  }
+
+  .home-description {
+    font-size: 15px;
+    margin-top: 24px;
+  }
+
+  .home-instruction {
+    font-size: 16px;
+    margin-top: 32px;
+  }
+
+  .home-logo {
+    max-width: 160px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .main-content {
+    padding: 15px;
+    margin: 80px 10px 35px 10px;
+  }
+
+  .home-title,
+  .page-title,
+  .access-denied-title {
+    font-size: 20px;
+  }
+
+  .home-description,
+  .home-instruction {
+    font-size: 14px;
+  }
+
+  .home-user-info {
+    font-size: 12px;
+  }
+
+  .home-logo {
+    max-width: 140px;
+    margin-top: 20px;
+  }
+}

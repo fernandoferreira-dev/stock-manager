@@ -1,0 +1,17 @@
+RewriteEngine On
+RewriteBase /api/
+
+# Permitir métodos HTTP (GET, POST, PUT, DELETE, OPTIONS)
+<Limit GET POST PUT DELETE OPTIONS>
+    Allow from all
+</Limit>
+
+# Rewrite /api/reports/123 para /api/reports.php?id=123
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^reports/(\d+)$ reports.php [L,QSA,E=ID:$1]
+
+# Rewrite /api/reservas/123 para /api/reservas.php?id=123
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^reservas/(\d+)$ reservas.php [L,QSA,E=ID:$1]

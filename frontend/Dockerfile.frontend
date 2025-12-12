@@ -1,0 +1,22 @@
+# Dockerfile.frontend
+
+# Usar Node 20
+FROM node:20
+
+# Definir diretório de trabalho
+WORKDIR /app
+
+# Copiar package.json e package-lock.json primeiro (para caching)
+COPY package*.json ./
+
+# Instalar todas as dependências (prod + dev)
+RUN npm install
+
+# Copiar todo o código do frontend
+COPY . .
+
+# Expor porta padrão do Vite
+EXPOSE 5173
+
+# Comando para rodar o Vite no modo dev e aceitar conexões externas
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]

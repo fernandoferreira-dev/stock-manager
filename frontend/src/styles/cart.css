@@ -1,0 +1,281 @@
+/* === Overlay === */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+/* === Sidebar === */
+.cart-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh;
+  background: #ffffff; /* branco puro */
+  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  animation: slideIn 0.35s forwards;
+  border-radius: 0; /* sem bordas arredondadas */
+}
+
+/* === Animações === */
+@keyframes slideIn {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* === Header === */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111111;
+  color: #ffffff;
+  padding: 1rem 1.2rem;
+  border-radius: 0; /* sem borda arredondada */
+}
+
+.cart-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-icon {
+  color: #61dafb;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+}
+
+/* === Items === */
+.cart-items {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background: #f4f5f7;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0; /* sem borda arredondada */
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.75rem;
+  transition: box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-info strong {
+  color: #000000;
+  display: block;
+}
+
+.item-category {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Remove Button */
+.remove-btn-solo {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 0; /* sem borda arredondada */
+  transition: background 0.2s ease;
+}
+.remove-btn-solo:hover {
+  background: #fee2e2;
+}
+
+/* === Badge de quantidade === */
+.item-quantity-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0033cc; /* mesmo azul do botão enviar */
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0; /* sem borda arredondada */
+  min-width: 24px;
+}
+
+/* === Empty State === */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: #9ca3af;
+}
+.empty-state svg {
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  width: 80px;
+  height: 80px;
+}
+
+/* === Footer === */
+.cart-footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 1.2rem;
+  background: #f9fafb;
+  border-radius: 0; /* sem borda arredondada */
+}
+
+/* Professor Section */
+.professor-section {
+  margin-bottom: 1rem;
+}
+.professor-section label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+.professor-section select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0; /* sem borda arredondada */
+  font-size: 0.95rem;
+  color: #111827;
+  background: #ffffff;
+}
+.professor-section select option {
+  color: #111827;
+}
+.loading-select {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Motivo Section */
+.motivo-section {
+  margin-bottom: 1rem;
+}
+.motivo-section label {
+  display: block;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0.4rem;
+}
+.motivo-section textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #d1d5db;
+  border-radius: 0; /* sem borda arredondada */
+  padding: 0.6rem;
+  font-size: 0.95rem;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+}
+.motivo-section textarea:focus {
+  border-color: #0033cc;
+  outline: none;
+}
+
+/* Total */
+.total {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+/* Footer Buttons */
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.clear-btn,
+.submit-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  border-radius: 0; /* sem borda arredondada */
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clear-btn {
+  background: #e5e7eb;
+  color: #000;
+}
+.clear-btn:hover {
+  background: #d1d5db;
+}
+
+.submit-btn {
+  background: #0033cc; /* azul mais forte */
+  color: white;
+}
+.submit-btn:hover {
+  background: #0022aa;
+}
+
+/* Required star */
+.required {
+  color: #dc2626;
+  font-weight: bold;
+}
+
+/* Scrollbar */
+.cart-items::-webkit-scrollbar {
+  width: 8px;
+}
+.cart-items::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 0; /* sem borda arredondada */
+}
+.cart-items::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .cart-sidebar {
+    width: 100%;
+    border-radius: 0;
+  }
+}

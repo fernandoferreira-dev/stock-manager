@@ -1,0 +1,348 @@
+/* Container */
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Title & Subtitle */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+h1+p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Filters & search bar container */
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Filter buttons */
+.filters-container button {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 2px;
+    transition: background-color 0.2s;
+}
+
+.filters-container button.active {
+    color: white;
+}
+
+.filters-container button.all {
+    background-color: #2563eb;
+    color: white;
+}
+
+.filters-container button.pendente {
+    background-color: #f59e0b;
+    color: white;
+}
+
+.filters-container button.aprovado {
+    background-color: #16a34a;
+    color: white;
+}
+
+.filters-container button.rejeitado {
+    background-color: #dc2626;
+    color: white;
+}
+
+.filters-container button.levantado {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.filters-container button.devolvido {
+    background-color: #6b7280;
+    color: white;
+}
+
+.filters-container button:not(.active) {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Search input */
+.search-input {
+    position: relative;
+    width: 250px;
+}
+
+.search-input input {
+    width: 100%;
+    padding: 6px 10px 6px 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.search-input svg {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    width: 16px;
+    height: 16px;
+}
+
+/* Card container */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+@media (min-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Card */
+.card {
+    background-color: white;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 15px;
+}
+
+/* Card header */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-header-left .icon-bg {
+    background-color: #dbeafe;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.card-header-left h3 {
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-header-left p {
+    font-size: 12px;
+    color: #555;
+    margin: 2px 0 0 0;
+}
+
+/* Status badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 12px;
+    border: 1px solid;
+}
+
+.status-pendente {
+    background-color: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.status-aprovado {
+    background-color: #dcfce7;
+    color: #166534;
+    border-color: #bbf7d0;
+}
+
+.status-rejeitado {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border-color: #fecaca;
+}
+
+.status-levantado {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border-color: #bfdbfe;
+}
+
+.status-devolvido {
+    background-color: #e5e7eb;
+    color: #374151;
+    border-color: #d1d5db;
+}
+
+/* User info */
+.user-info {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.user-info .user-name {
+    font-weight: 500;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user-info .user-email {
+    font-size: 12px;
+    color: #555;
+    margin-left: 20px;
+}
+
+/* Item list */
+.items-list {
+    margin-bottom: 10px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #f9fafb;
+    padding: 6px 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+}
+
+.item-info p {
+    margin: 0;
+}
+
+.item-info p:first-child {
+    font-weight: 500;
+    color: #111;
+}
+
+.item-info p:nth-child(2) {
+    font-size: 12px;
+    color: #555;
+}
+
+.item-info p.italic {
+    font-size: 12px;
+    color: #555;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* Quantity badge */
+.item-quantity {
+    background-color: #dbeafe;
+    color: #1e40af;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+/* Actions */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.card-actions button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+}
+
+.card-actions .approve {
+    background-color: #16a34a;
+}
+
+.card-actions .reject {
+    background-color: #dc2626;
+}
+
+.card-actions .collect {
+    background-color: #3b82f6;
+}
+
+.card-actions .return {
+    background-color: #6b7280;
+}
+
+/* Already processed message */
+.processed-msg {
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+    border-top: 1px solid #ddd;
+    padding-top: 6px;
+}
+
+/* Loading and Error */
+.loading-text {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin: 40px 0;
+}
+
+.error-box {
+    text-align: center;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+.error-box button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #991b1b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

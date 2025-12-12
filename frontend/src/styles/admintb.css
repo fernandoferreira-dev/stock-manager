@@ -1,0 +1,1061 @@
+/* Container principal */
+.inventory-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Header */
+.inventory-header {
+  margin-bottom: 1.5rem;
+}
+
+.inventory-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.inventory-subtitle {
+  color: #4b5563;
+}
+
+/* Add Button */
+.add-button-container {
+  margin-bottom: 1rem;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Table */
+.table-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.inventory-table thead {
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.inventory-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inventory-table th.col-expand {
+  width: 3rem;
+}
+
+.inventory-table th.col-actions {
+  text-align: right;
+}
+
+.inventory-table tbody {
+  border-top: 1px solid #e5e7eb;
+}
+
+.table-row {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s;
+}
+
+.table-row:hover {
+  background-color: #f9fafb;
+}
+
+.inventory-table td {
+  padding: 0.75rem 1rem;
+}
+
+/* Expand Button */
+.expand-button {
+  color: #6b7280;
+  background: none;
+  border: none;
+  padding: 0.25rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-button:hover {
+  color: #374151;
+}
+
+/* Item Info */
+.item-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.category-text,
+.lab-text {
+  color: #374151;
+}
+
+/* Quantity */
+.quantity {
+  font-weight: 400;
+  color: #374151;
+}
+
+.quantity.zero {
+  color: #374151;
+}
+
+.quantity.low {
+  color: #374151;
+}
+
+.quantity.normal {
+  color: #374151;
+}
+
+/* Actions */
+.actions-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.action-button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-button.edit {
+  color: #2563eb;
+}
+
+.action-button.edit:hover {
+  background-color: #eff6ff;
+}
+
+.action-button.delete {
+  color: #dc2626;
+}
+
+.action-button.delete:hover {
+  background-color: #fef2f2;
+}
+
+/* Expanded Row */
+.expanded-row {
+  background-color: #f9fafb;
+}
+
+.expanded-content {
+  padding: 0.75rem 1rem;
+  margin-left: 2rem;
+}
+
+.assoc-title {
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.assoc-description {
+  color: #4b5563;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.associate-button {
+  margin-top: 0.5rem;
+  color: #2563eb;
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Cartões associados */
+.associated-cards {
+  margin: 12px 0 16px;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fafafa;
+}
+
+.card-uid {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.card-meta {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+
+.tag-success {
+  background: #e6f7ef;
+  color: #0f8a4b;
+  border-color: #b8e6ce;
+}
+
+.tag-muted {
+  background: #f2f2f2;
+  color: #666;
+  border-color: #dedede;
+}
+
+.error-text {
+  color: #c0392b;
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.small-text {
+  font-size: 13px;
+  color: #666;
+}
+
+.associate-button:hover {
+  color: #1d4ed8;
+}
+
+/* Status Badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.status-ativo {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+.status-inativo {
+  background-color: #f3f4f6;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.status-bloqueado {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+.status-perdido {
+  background-color: #ffedd5;
+  color: #c2410c;
+  border-color: #fdba74;
+}
+
+.status-danificado {
+  background-color: #fef9c3;
+  color: #a16207;
+  border-color: #fde047;
+}
+
+/* Loading */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.loading-content {
+  text-align: center;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  border-radius: 9999px;
+  height: 3rem;
+  width: 3rem;
+  border: 2px solid transparent;
+  border-bottom-color: #2563eb;
+  margin: 0 auto 1rem;
+}
+
+.spinner.small {
+  height: 2rem;
+  width: 2rem;
+}
+
+.loading-text {
+  color: #4b5563;
+  margin: 0;
+}
+
+/* Error */
+.error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.error-box {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 28rem;
+}
+
+.error-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+}
+
+.error-header h3 {
+  color: #991b1b;
+  font-weight: 600;
+  margin: 0;
+}
+
+.error-message {
+  color: #b91c1c;
+  margin: 0 0 1rem 0;
+}
+
+.retry-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.retry-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin: 0;
+}
+
+.pagination-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-text {
+  font-size: 0.875rem;
+  color: #374151;
+  padding: 0 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* Modal RFID */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #6b7280;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-info {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.modal-info strong {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.rfid-status {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rfid-status.idle {
+  background-color: #f3f4f6;
+  border: 2px dashed #d1d5db;
+}
+
+.rfid-status.reading {
+  background-color: #eff6ff;
+  border: 2px solid #3b82f6;
+}
+
+.rfid-status.success {
+  background-color: #f0fdf4;
+  border: 2px solid #22c55e;
+}
+
+.rfid-status.error {
+  background-color: #fef2f2;
+  border: 2px solid #ef4444;
+}
+
+.status-idle,
+.status-reading,
+.status-success,
+.status-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.status-idle svg {
+  color: #6b7280;
+}
+
+.status-reading .spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.status-success .success-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #22c55e;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.status-error svg {
+  color: #ef4444;
+}
+
+.uid-display {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  background-color: #f9fafb;
+  border-radius: 0.25rem;
+  margin-top: 0.5rem;
+}
+
+.modal-instructions {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border-left: 4px solid #3b82f6;
+}
+
+.modal-instructions h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.modal-instructions ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+.modal-instructions li {
+  margin: 0.25rem 0;
+}
+
+.small-text {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0.5rem 0 0 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background-color: #f9fafb;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Add Article Modal - form improvements */
+.add-article-modal .modal-body {
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+.add-article-modal .form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.add-article-modal .form-input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  font-size: 0.95rem;
+  color: #111827;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.08s;
+}
+
+.add-article-modal .form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 4px 14px rgba(59,130,246,0.08);
+}
+
+.add-article-modal select.form-input {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, #6b7280 50%), linear-gradient(135deg, #6b7280 50%, transparent 50%);
+  background-position: calc(100% - 1rem) calc(1rem + 2px), calc(100% - .6rem) calc(1rem + 2px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.25rem;
+}
+
+.add-article-modal input[type="number"].form-input {
+  -moz-appearance: textfield;
+}
+
+.add-article-modal .two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.add-article-modal .modal-footer {
+  padding: 1rem 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Make Cancel and Create the same width inside Add Article modal */
+.add-article-modal .modal-footer .btn-primary,
+.add-article-modal .modal-footer .btn-secondary {
+  min-width: 140px;
+  width: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .add-article-modal .modal-footer {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .add-article-modal .modal-footer .btn-primary,
+  .add-article-modal .modal-footer .btn-secondary {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Histórico de Devoluções - Filtros */
+.historico-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.historico-filter-input {
+  flex: 1;
+  min-width: 250px;
+  padding: 0.625rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  background-color: white;
+}
+
+.historico-filter-input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.historico-filter-input::placeholder {
+  color: #9ca3af;
+}
+
+.historico-content {
+  margin-top: 1rem;
+}
+
+.historico-table-desktop {
+  display: block;
+}
+
+.historico-cards-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .historico-table-desktop {
+    display: none;
+  }
+  
+  .historico-cards-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .historico-filters {
+    flex-direction: column;
+  }
+  
+  .historico-filter-input {
+    min-width: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media (min-width: 640px) {
+  .add-article-modal .modal-body { grid-template-columns: 1fr 1fr; }
+  .add-article-modal .modal-body .full { grid-column: 1 / -1; }
+}
+
+@media (max-width: 520px) {
+  .add-article-modal .modal-content { width: 95%; max-width: 420px; }
+  .add-article-modal .modal-header h2 { font-size: 1.125rem; }
+}
+
+/* === Cartões NFC Grid === */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.nfc-card-box {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #111827;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.nfc-card-box:hover {
+  border-color: #3b82f6;
+  box-shadow: 0 4px 6px rgba(59, 130, 246, 0.1);
+}
+
+.nfc-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nfc-uid {
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #3b82f6;
+}
+
+.nfc-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.nfc-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: fit-content;
+  border: 1px solid;
+}
+
+.status-disponivel {
+  background-color: #d1fae5;
+  color: #065f46;
+  border-color: #10b981;
+}
+
+.status-reservado {
+  background-color: #fef3c7;
+  color: #92400e;
+  border-color: #f59e0b;
+}
+
+.status-em-uso {
+  background-color: #dbeafe;
+  color: #1e40af;
+  border-color: #3b82f6;
+}
+
+.status-devolvido {
+  background-color: #f3f4f6;
+  color: #374151;
+  border-color: #9ca3af;
+}
+
+.status-default {
+  background-color: #f9fafb;
+  color: #4b5563;
+  border-color: #d1d5db;
+}
+
+.nfc-reservation {
+  font-size: 0.75rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.nfc-card-footer {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nfc-date {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+.no-cards-message {
+  text-align: center;
+  padding: 2rem;
+  color: #9ca3af;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.no-cards-message .small-text {
+  margin: 0;
+  color: #6b7280;
+}
+
+/* === Histórico Cards Mobile === */
+.historico-card {
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.historico-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0.75rem;
+}
+
+.historico-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.95rem;
+}
+
+.historico-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.historico-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.historico-card-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 0.875rem;
+  min-width: 140px;
+}
+
+.historico-card-value {
+  color: #111827;
+  font-size: 0.875rem;
+  text-align: right;
+  word-break: break-word;
+}
+
+.historico-card-highlight {
+  font-weight: 600;
+  color: #059669;
+}
+
+.historico-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6b7280;
+  font-size: 0.95rem;
+}

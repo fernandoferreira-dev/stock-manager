@@ -1,0 +1,426 @@
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #000000;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.container > p {
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ===== Filter buttons ===== */
+.filters-container button {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background-color: #f1f3f5;
+    color: #333;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.filters-container button:hover {
+    background-color: #dee2e6;
+}
+
+.filters-container button.active {
+    background-color: #1d3557;
+    color: #fff;
+}
+
+/* ===== Search input ===== */
+.search-input {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+.search-input input {
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 6px;
+    font-size: 0.9rem;
+    width: 180px;
+}
+
+.search-input svg {
+    color: #6c757d;
+}
+
+/* ===== Cards ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid #e9ecef;
+    /* ✅ Removido transform e hover */
+}
+
+/* ===== Card header ===== */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-bg {
+    background-color: #f1f3f5;
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #1d3557;
+}
+
+.card-header p {
+    font-size: 0.85rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin: 2px 0 0 0;
+}
+
+/* ===== Status badges ===== */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.status-pendente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-aprovado {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-rejeitado {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.status-levantar {
+    background-color: #cfe2ff;
+    color: #084298;
+}
+
+.status-levantado {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-devolvido {
+    background-color: #e2e3e5;
+    color: #41464b;
+}
+
+.status-default {
+    background-color: #f8f9fa;
+    color: #495057;
+}
+
+/* ===== User info ===== */
+.user-info {
+    margin: 0;
+}
+
+
+
+.user-email {
+    font-size: 0.85rem;
+    color: #000000;
+    margin: 0;
+}
+
+/* ===== Motivo box ===== */
+.motivo-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #000000;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin: 0;
+}
+
+.motivo-box p {
+    font-size: 0.9rem;
+    color: #333;
+    margin: 0;
+}
+
+/* ===== Items list ===== */
+.items-list {
+    margin: 0;
+    padding: 12px 0 0 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.items-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1d3557;
+    margin: 0 0 10px 0;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    gap: 8px;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.item-info p {
+    margin: 0 0 2px 0;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+.item-info .italic {
+    font-style: italic;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.item-quantity {
+    font-weight: 600;
+    color: #1d3557;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+/* ===== Dates info ===== */
+.dates-info {
+    margin: 0;
+    padding: 12px 0 0 0;
+    border-top: 1px solid #e9ecef;
+}
+
+.date-item {
+    font-size: 0.85rem;
+    color: #495057;
+    margin: 0;
+}
+
+.date-item strong {
+    color: #1d3557;
+}
+
+/* ===== Action buttons ===== */
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0;
+    padding-top: 8px;
+    border-top: 1px solid #e9ecef;
+}
+
+.card-actions:empty {
+    display: none;
+}
+
+/* Approve & Reject buttons */
+button.approve,
+button.reject {
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+button.approve {
+    background-color: #28a745;
+}
+
+button.approve:hover {
+    background-color: #218838;
+}
+
+button.reject {
+    background-color: #dc3545;
+}
+
+button.reject:hover {
+    background-color: #c82333;
+}
+
+/* Cancel button */
+button.cancel {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #6c757d;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+button.cancel:hover {
+    background-color: #5a6268;
+}
+
+button.cancel svg {
+    color: #fff;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/* Report button */
+button.report {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    color: #000 !important;
+    transition: background-color 0.2s;
+}
+
+button.report:hover {
+    background-color: #e0a800;
+}
+
+button.report svg {
+    color: #000 !important;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+/* ===== Processed message ===== */
+.processed-msg {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #6c757d;
+    text-align: right;
+    padding-top: 8px;
+    border-top: 1px solid #e9ecef;
+}
+
+/* ===== Empty card ===== */
+.empty-card {
+    text-align: center;
+    padding: 40px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.empty-card p {
+    margin-top: 12px;
+    color: #6c757d;
+}
+
+/* ===== Loading & Error ===== */
+.loading-text {
+    text-align: center;
+    color: #6c757d;
+    padding: 40px 20px;
+}
+
+.error-box {
+    text-align: center;
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.error-box button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #721c24;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.error-box button:hover {
+    background-color: #5a161c;
+}
