@@ -1,48 +1,85 @@
-# Stock Management Backend API
+# Stock Management System
 
-PHP REST API for the Laboratory Stock Management System. Handles inventory management, RFID operations, user authentication, and reporting.
+A complete laboratory inventory management system with web interface and RFID support. Handles inventory management, item tracking, reservations, and reporting across multiple laboratories.
 
 ## Features
 
 -   **RESTful API**: Clean, resource-based endpoints
+-   **Modern Frontend**: React-based responsive web interface
 -   **JWT Authentication**: Secure token-based authentication
 -   **RFID Support**: RC522 reader integration for item tagging
 -   **Multi-role System**: Admin, Manager, and User roles
--   **Database Abstraction**: PDO-based database layer
--   **CORS Support**: Cross-origin request handling
--   **Error Handling**: Comprehensive exception management
+-   **Reservation System**: Request and track item loans
+-   **Reporting**: Inventory reports and loan history
+-   **Docker Support**: Containerized backend and frontend
 
 ## Tech Stack
+
+**Backend:**
 
 -   **PHP**: 7.4+
 -   **Database**: MySQL/MariaDB
 -   **Authentication**: JWT (JSON Web Tokens)
 -   **Dependencies**: Firebase JWT, PHPMailer, Dotenv
--   **Hardware**: Arduino RC522 RFID Reader
+
+**Frontend:**
+
+-   **React**: 18+
+-   **Vite**: Build tool
+-   **Tailwind CSS**: Styling
+-   **Node.js**: Runtime environment
+
+**Hardware:**
+
+-   **Arduino**: RC522 RFID Reader
 
 ## Prerequisites
 
 -   PHP 7.4 or higher
+-   Node.js 16+ and npm
 -   MySQL 5.7 or MariaDB 10.2+
 -   Composer
+-   Docker and Docker Compose (optional)
 -   Optional: Arduino with RC522 RFID reader
 
 ## Installation
 
-1. Install PHP dependencies:
+### Option 1: Using Docker (Recommended)
+
+```bash
+docker-compose up -d
+```
+
+This will:
+
+-   Start MySQL database
+-   Start PHP backend on `http://localhost:8000`
+-   Start React frontend on `http://localhost:5173`
+-   Import database schema
+
+### Option 2: Manual Setup
+
+#### Backend Setup
+
+1. Navigate to backend directory:
 
 ```bash
 cd backend
+```
+
+2. Install PHP dependencies:
+
+```bash
 composer install
 ```
 
-2. Create environment file:
+3. Create environment file:
 
 ```bash
 cp .env.example .env
 ```
 
-3. Configure database and other settings in `.env`:
+4. Configure database and other settings in `.env`:
 
 ```env
 DB_HOST=localhost
@@ -61,14 +98,14 @@ MAIL_FROM=noreply@example.com
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000
 ```
 
-4. Create database and import schema:
+5. Create database and import schema:
 
 ```bash
 mysql -u root -p < ../database_structure.sql
 mysql -u root -p < ../create_cartao_rfid_table.sql
 ```
 
-5. Start the development server:
+6. Start the PHP development server:
 
 ```bash
 php -S localhost:8000
@@ -76,49 +113,146 @@ php -S localhost:8000
 
 The API will be available at `http://localhost:8000/api`
 
+#### Frontend Setup
+
+1. Navigate to frontend directory:
+
+```bash
+cd frontend
+```
+
+2. Install Node dependencies:
+
+```bash
+npm install
+```
+
+3. Create environment file:
+
+```bash
+cp .env.example .env
+```
+
+4. Configure API URL in `.env`:
+
+```env
+VITE_API_URL=http://localhost:8000
+```
+
+5. Start the development server:
+
+```bash
+npm run dev
+```
+
+The frontend will be available at `http://localhost:5173`
+
 ## Project Structure
 
 ```
-backend/
-├── api/                      # API endpoints
-│   ├── artigo.php           # Article CRUD operations
-│   ├── auth.php             # Authentication endpoints
-│   ├── categorias.php       # Category management
-│   ├── subcategorias.php    # Subcategory management
-│   ├── labs.php             # Laboratory management
-│   ├── reservas.php         # Reservation/request handling
-│   ├── historico_devolucoes.php  # Return history
-│   ├── professores.php      # Professor management
-│   ├── rfid.php             # RFID operations
-│   ├── nfc_cards.php        # NFC card management
-│   ├── reports.php          # Report generation
-│   ├── read_rfid.php        # RFID reading endpoint
-│   └── db.php               # Database operations
-├── models/                   # Data models
-│   ├── Artigo.php           # Article model
-│   ├── CartaoRFID.php       # RFID card model
-│   ├── Categoria.php        # Category model
-│   ├── Subcategoria.php     # Subcategory model
-│   ├── Lab.php              # Laboratory model
-│   ├── Reserva.php          # Reservation model
-│   ├── Reports.php          # Reports model
-│   └── Users.php            # User model
-├── config/                   # Configuration
-│   ├── database.php         # Database connection
-│   ├── jwt.php              # JWT configuration
-│   ├── cors.php             # CORS headers
-│   ├── email.php            # Email configuration
-│   ├── helpers.php          # Helper functions
-│   └── database.php         # Database setup
-├── controllers/              # Controllers
-│   └── auth.php             # Authentication logic
-├── includes/                 # Middleware
-│   └── jwt_middleware.php   # JWT verification middleware
-├── arduino/                  # Hardware code
-│   └── rc522_reader.ino     # RFID reader sketch
-├── composer.json             # PHP dependencies
-├── index.php                 # Entry point
-└── .env.example              # Environment template
+stock-manager/
+├── backend/                  # PHP REST API
+│   ├── api/                  # API endpoints
+│   │   ├── artigo.php        # Article CRUD operations
+│   │   ├── auth.php          # Authentication endpoints
+│   │   ├── categorias.php    # Category management
+│   │   ├── subcategorias.php # Subcategory management
+│   │   ├── labs.php          # Laboratory management
+│   │   ├── reservas.php      # Reservation/request handling
+│   │   ├── historico_devolucoes.php # Return history
+│   │   ├── professores.php   # Professor management
+│   │   ├── rfid.php          # RFID operations
+│   │   ├── nfc_cards.php     # NFC card management
+│   │   ├── reports.php       # Report generation
+│   │   ├── read_rfid.php     # RFID reading endpoint
+│   │   └── db.php            # Database operations
+│   ├── models/               # Data models
+│   │   ├── Artigo.php        # Article model
+│   │   ├── CartaoRFID.php    # RFID card model
+│   │   ├── Categoria.php     # Category model
+│   │   ├── Subcategoria.php  # Subcategory model
+│   │   ├── Lab.php           # Laboratory model
+│   │   ├── Reserva.php       # Reservation model
+│   │   ├── Reports.php       # Reports model
+│   │   └── Users.php         # User model
+│   ├── config/               # Configuration
+│   │   ├── database.php      # Database connection
+│   │   ├── jwt.php           # JWT configuration
+│   │   ├── cors.php          # CORS headers
+│   │   ├── email.php         # Email configuration
+│   │   └── helpers.php       # Helper functions
+│   ├── controllers/          # Controllers
+│   │   └── auth.php          # Authentication logic
+│   ├── includes/             # Middleware
+│   │   └── jwt_middleware.php # JWT verification middleware
+│   ├── arduino/              # Hardware code
+│   │   └── rc522_reader.ino  # RFID reader sketch
+│   ├── Dockerfile.backend    # Docker configuration
+│   ├── composer.json         # PHP dependencies
+│   ├── index.php             # Entry point
+│   └── README.md             # Backend documentation
+├── frontend/                 # React Web Application
+│   ├── src/
+│   │   ├── components/       # React components
+│   │   │   ├── Navbar.jsx    # Navigation bar
+│   │   │   ├── Sidebar.jsx   # Admin sidebar
+│   │   │   ├── cart.jsx      # Shopping cart
+│   │   │   ├── pedidos.jsx   # User orders
+│   │   │   ├── meusPedidos.jsx # My orders
+│   │   │   ├── reportsges.jsx # Reports (admin)
+│   │   │   ├── tableges.jsx  # Admin data table
+│   │   │   ├── tableuser.jsx # User data table
+│   │   │   ├── stockform.jsx # Stock form
+│   │   │   ├── login-form.jsx # Login form
+│   │   │   ├── historicoDevolucoes.jsx # Return history
+│   │   │   └── footer.jsx    # Footer
+│   │   ├── styles/           # CSS stylesheets
+│   │   ├── utils/            # Utility functions
+│   │   │   └── apiUrl.js     # API configuration
+│   │   ├── App.jsx           # Main app component
+│   │   └── main.jsx          # Entry point
+│   ├── public/               # Static assets
+│   ├── Dockerfile.frontend   # Docker configuration
+│   ├── package.json          # Dependencies
+│   ├── vite.config.js        # Vite configuration
+│   ├── tailwind.config.js    # Tailwind CSS config
+│   ├── postcss.config.js     # PostCSS config
+│   └── README.md             # Frontend documentation
+├── docker-compose.yml        # Docker Compose configuration
+├── database_structure.sql    # Database schema
+├── database_setup.sql        # Setup script
+├── create_cartao_rfid_table.sql # RFID table creation
+├── schema_correct.sql        # Schema corrections
+├── composer.json             # Root PHP config
+├── package.json              # Root Node config
+└── README.md                 # This file
+```
+
+## Usage
+
+### User Roles
+
+The system has three user roles:
+
+-   **Admin**: Full access to all features, user management, and reports
+-   **Manager**: Can manage inventory, create and review reports
+-   **User**: Can view inventory, make reservations, and view their order history
+
+### Frontend Features
+
+1. **Login**: Authenticate with email and password
+2. **Browse Inventory**: Search and filter articles by category and laboratory
+3. **Make Reservations**: Request items for loan
+4. **Track Orders**: View status of your reservations
+5. **Return History**: See all returned items
+6. **Admin Dashboard**: Manage inventory, users, and view reports (admin only)
+
+### API Usage
+
+All API requests require JWT authentication in the Authorization header:
+
+```
+Authorization: Bearer <your_jwt_token>
 ```
 
 ## API Endpoints
@@ -348,14 +482,46 @@ Direct database access available through PDO connection.
 
 ## Deployment
 
-For production deployment:
+### Docker Deployment
 
-1. Set environment variables in `.env`
-2. Run database migrations
-3. Configure web server (Apache/Nginx)
-4. Enable HTTPS
-5. Set `DEBUG=false` in `.env`
-6. Configure proper CORS origins
+1. Build and start containers:
+
+```bash
+docker-compose up --build
+```
+
+2. Access the application:
+    - Frontend: `http://localhost:5173`
+    - Backend API: `http://localhost:8000/api`
+
+### Production Deployment
+
+**Backend:**
+
+1. Set environment variables in `.env`:
+
+    ```
+    DEBUG=false
+    DB_HOST=your-database-host
+    JWT_SECRET=strong-secret-key
+    CORS_ORIGINS=https://your-frontend-domain.com
+    ```
+
+2. Configure web server (Apache/Nginx) to point to `backend/` directory
+
+3. Enable HTTPS on both frontend and backend
+
+**Frontend:**
+
+1. Build the React app:
+
+    ```bash
+    npm run build
+    ```
+
+2. Deploy the `dist/` folder to your hosting service (Netlify, Vercel, etc.)
+
+3. Configure API URL to point to production backend
 
 ## Troubleshooting
 
@@ -382,3 +548,21 @@ For production deployment:
 -   Check Arduino serial connection
 -   Verify RC522 reader wiring
 -   Test Arduino sketch with Serial Monitor
+
+## Support & Documentation
+
+-   [Backend Documentation](backend/README.md)
+-   [Frontend Documentation](frontend/README.md)
+-   Database Schema: [database_structure.sql](database_structure.sql)
+-   Arduino RFID Reader: [rc522_reader.ino](backend/arduino/rc522_reader.ino)
+
+## Contributing
+
+1. Create a feature branch: git checkout -b feature/your-feature
+2. Commit changes: git commit -am 'Add your feature'
+3. Push to branch: git push origin feature/your-feature
+4. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
