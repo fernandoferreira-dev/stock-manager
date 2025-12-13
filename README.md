@@ -14,7 +14,7 @@ A complete laboratory inventory management system with web interface and RFID su
 
 ![Dashboard](docs/images/dashboard.png)
 
-### Inventory
+### History
 
 ![Inventory](docs/images/history.png)
 
