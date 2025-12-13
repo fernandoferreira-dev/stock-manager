@@ -4,6 +4,20 @@
 
 A complete laboratory inventory management system with web interface and RFID support. Handles inventory management, item tracking, reservations, and reporting across multiple laboratories.
 
+## Screenshots
+
+### Login
+
+![Login](docs/images/login.png)
+
+### Dashboard
+
+![Dashboard](docs/images/dashboard.png)
+
+### Inventory
+
+![Inventory](docs/images/history.png)
+
 ## Features
 
 -   **RESTful API**: Clean, resource-based endpoints
@@ -557,17 +571,3 @@ docker-compose up --build
 -   [Frontend Documentation](frontend/README.md)
 -   Database Schema: [database_structure.sql](database_structure.sql)
 -   Arduino RFID Reader: [rc522_reader.ino](backend/arduino/rc522_reader.ino)
-
-## Screenshots
-
-### Login
-
-![Login](docs/images/login.png)
-
-### Dashboard
-
-![Dashboard](docs/images/dashboard.png)
-
-### Inventory
-
-![Inventory](docs/images/history.png)
